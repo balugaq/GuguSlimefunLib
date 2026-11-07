@@ -1,0 +1,9 @@
+version: "1"
+rules:
+  - base: master
+    upstream: TimetownDev:master
+    mergeMethod: merge
+    assignees:
+      - balugaq
+    conflictReviewers:
+      - balugaq

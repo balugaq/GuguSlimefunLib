@@ -1,0 +1,33 @@
+# Gradle Version Catalog
+# 依赖集中管理：build.gradle.kts 里用 `libs.xxx` 引用。
+# alias 一律 kebab-case，Kotlin DSL 访问时自动转驼峰（如 `paper-api` → `libs.paper.api`）。
+
+[versions]
+# Core（原 Maven pom 版本，2026-11-07 迁移 Gradle 时逐一验证可解析）
+paper-api = "1.21.11-R0.1-SNAPSHOT"
+slimefun4 = "2025.1"
+
+# Shaded（implementation，会被 shadow 打入并 relocate）
+nbt-api = "09ed531d44"
+matlib = "3fee3cb"
+
+# Tools
+lombok = "1.18.38" # 原 pom 用 RELEASE（本机 JDK 26 下注解处理器失效），2026-11-07 固定为此版本
+
+# Plugins
+shadow = "9.6.1"
+
+[libraries]
+# Core
+paper-api = { module = "io.papermc.paper:paper-api", version.ref = "paper-api" }
+slimefun4 = { module = "com.github.SlimefunGuguProject:Slimefun4", version.ref = "slimefun4" }
+
+# Shaded
+nbt-api = { module = "com.github.TimetownDev:Item-NBT-API", version.ref = "nbt-api" }
+matlib = { module = "com.github.m1919810:matlib", version.ref = "matlib" }
+
+# Tools
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

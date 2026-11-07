@@ -115,3 +115,10 @@ run/
 # depend
 /Paper/
 /matlib/
+
+.workbuddy/
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!lib/*.jar
+server/

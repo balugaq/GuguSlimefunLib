@@ -1,5 +1,5 @@
 name: GuguSlimefunLib
-version: '${project.version}'
+version: '${version}'
 main: me.ddggdd135.guguslimefunlib.GuguSlimefunLib
 api-version: '1.16'
 authors:
